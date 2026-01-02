@@ -14,12 +14,7 @@ int main() {
 
         s.setEgzaminas(9);
 
-        std::cout << "Studentas: "
-                  << s.getVardas() << " "
-                  << s.getPavarde() << std::endl;
-
-        std::cout << "Galutinis balas (vidurkis): "
-                  << s.galutinisVidurkis() << std::endl;
+        std::cout << s << std::endl;
     }
     catch (const std::exception& e) {
         std::cerr << "Klaida: " << e.what() << std::endl;
