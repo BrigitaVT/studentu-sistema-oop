@@ -65,6 +65,7 @@ std::ostream& operator<<(std::ostream& out, const Studentas& s) {
         << s.galutinisVidurkis();
     return out;
 }
+
 std::istream& operator>>(std::istream& in, Studentas& s) {
     s = Studentas(); // išvalome senus duomenis
 
@@ -74,19 +75,6 @@ std::istream& operator>>(std::istream& in, Studentas& s) {
     while (in >> pazymys && pazymys != 0) {
         s.addND(pazymys);
     }
-    std::istream& operator>>(std::istream& in, Studentas& s) {
-    s = Studentas(); // išvalome senus duomenis
-
-    in >> s.vardas >> s.pavarde;
-
-    int pazymys;
-    while (in >> pazymys && pazymys != 0) {
-        s.addND(pazymys);
-    }
-
-    in >> s.egzaminas;
-    return in;
-}
 
     in >> s.egzaminas;
     return in;
