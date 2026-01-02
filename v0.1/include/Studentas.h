@@ -28,5 +28,7 @@ public:
     // Skaičiavimai
     double galutinisVidurkis() const;
 };
+#include <iostream>
 
+std::ostream& operator<<(std::ostream& out, const Studentas& s);
 #endif
