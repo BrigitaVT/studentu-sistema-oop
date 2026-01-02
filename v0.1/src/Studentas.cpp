@@ -54,6 +54,10 @@ double Studentas::galutinisMediana() const {
 
     return 0.4 * med + 0.6 * egzaminas;
 }
+double Studentas::galutinis(bool naudotiMediana) const {
+    return naudotiMediana ? galutinisMediana() : galutinisVidurkis();
+}
+
 std::ostream& operator<<(std::ostream& out, const Studentas& s) {
     out << s.getPavarde() << " "
         << s.getVardas()
