@@ -27,6 +27,7 @@ public:
 
     // Skaičiavimai
     double galutinisVidurkis() const;
+    double galutinisMediana() const;
 };
 #include <iostream>
 
