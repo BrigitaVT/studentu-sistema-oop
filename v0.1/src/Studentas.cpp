@@ -37,3 +37,10 @@ double Studentas::galutinisVidurkis() const {
     double vid = std::accumulate(nd.begin(), nd.end(), 0.0) / nd.size();
     return 0.4 * vid + 0.6 * egzaminas;
 }
+std::ostream& operator<<(std::ostream& out, const Studentas& s) {
+    out << s.getPavarde() << " "
+        << s.getVardas()
+        << " | Galutinis (vid.): "
+        << s.galutinisVidurkis();
+    return out;
+}
