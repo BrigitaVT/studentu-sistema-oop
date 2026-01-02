@@ -1,6 +1,7 @@
 #include "Studentas.h"
 #include <numeric>   // std::accumulate
 #include <stdexcept> // std::runtime_error
+#include <algorithm>
 
 Studentas::Studentas() : egzaminas(0) {}
 
@@ -36,6 +37,22 @@ double Studentas::galutinisVidurkis() const {
 
     double vid = std::accumulate(nd.begin(), nd.end(), 0.0) / nd.size();
     return 0.4 * vid + 0.6 * egzaminas;
+}
+double Studentas::galutinisMediana() const {
+    if (nd.empty()) return 0.0;
+
+    std::vector<int> temp = nd;
+    std::sort(temp.begin(), temp.end());
+
+    double med;
+    size_t n = temp.size();
+    if (n % 2 == 1) {
+        med = temp[n / 2];
+    } else {
+        med = (temp[n / 2 - 1] + temp[n / 2]) / 2.0;
+    }
+
+    return 0.4 * med + 0.6 * egzaminas;
 }
 std::ostream& operator<<(std::ostream& out, const Studentas& s) {
     out << s.getPavarde() << " "
