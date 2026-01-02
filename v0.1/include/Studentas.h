@@ -31,4 +31,5 @@ public:
 #include <iostream>
 
 std::ostream& operator<<(std::ostream& out, const Studentas& s);
+std::istream& operator>>(std::istream& in, Studentas& s);
 #endif
