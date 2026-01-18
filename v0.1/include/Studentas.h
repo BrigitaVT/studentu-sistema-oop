@@ -14,6 +14,9 @@ private:
 
 public:
     Studentas();
+    Studentas(const Studentas& other);
+    Studentas& operator=(const Studentas& other);
+    ~Studentas();
 
     void setVardas(const std::string& v);
     void setPavarde(const std::string& p);
