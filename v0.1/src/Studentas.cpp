@@ -5,6 +5,24 @@
 
 Studentas::Studentas() : egzaminas(0) {}
 
+Studentas::Studentas(const Studentas& other)
+    : vardas(other.vardas),
+      pavarde(other.pavarde),
+      nd(other.nd),
+      egzaminas(other.egzaminas) {}
+
+Studentas& Studentas::operator=(const Studentas& other) {
+    if (this != &other) {
+        vardas = other.vardas;
+        pavarde = other.pavarde;
+        nd = other.nd;
+        egzaminas = other.egzaminas;
+    }
+    return *this;
+}
+
+Studentas::~Studentas() = default;
+
 void Studentas::setVardas(const std::string& v) {
     vardas = v;
 }
